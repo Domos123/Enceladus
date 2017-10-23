@@ -19,7 +19,7 @@ module.exports = class SetGameCommand extends Command {
 
   run(msg, args){
     msg.delete();
-    this.client.user.setPresence({game: {name: args['status'], type: 0}});;
+    this.client.user.setPresence({afk: true, game: {name: args['status']}});;
   }
 
 }
