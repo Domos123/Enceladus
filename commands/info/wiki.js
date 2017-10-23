@@ -22,6 +22,7 @@ module.exports = class WikiCommand extends Command {
   async run(msg, args) {
     msg.delete();
     const topic = args['topic'];
+    console.log(`Looking up ${args['topic']} on Wikipedia`);
     wikipedia.page.data(topic,{ content: true },function(response){
       if (response) {
         const parsedPage = parseWikiHTML(response.text['*']);
