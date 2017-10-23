@@ -6,7 +6,7 @@ module.exports = class WikiCommand extends Command {
   constructor(client) {
     super(client, {
       name: 'wiki',
-      group: 'util',
+      group: 'info',
       memberName: 'wiki',
       description: 'Define a term using Wikipedia.',
       args: [
