@@ -12,7 +12,8 @@ require('./util/eventLoader')(enceladus);
 
 enceladus.registry
     .registerGroups([
-        ['info', 'Information Providing Commands']
+        ['info', 'Information Providing Commands'],
+        ['util', 'Utility Commands']
     ])
     .registerDefaultGroups()
     .registerDefaultTypes()
