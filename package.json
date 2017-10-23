@@ -1,0 +1,36 @@
+{
+  "name": "enceladus",
+  "version": "1.0.0",
+  "description": "A minimal discord selfbot",
+  "main": "bot.js",
+  "dependencies": {
+    "discord.js": "^11.2.1",
+    "discord.js-commando": "^0.9.0",
+    "log4js": "^2.3.3",
+    "pkginfo": "^0.4.1",
+    "node-wikipedia": "^0.0.2"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Domos123/Enceladus.git"
+  },
+  "keywords": [
+    "discord",
+    "discordjs",
+    "bot",
+    "ninibot"
+  ],
+  "author": {
+    "name": "Dominic Brady",
+    "email": "domos@domos.me.uk"
+  },
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/Domos123/Enceladus/issues"
+  },
+  "homepage": "https://github.com/Domos123/Enceladus#readme"
+}
