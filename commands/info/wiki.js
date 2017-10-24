@@ -69,17 +69,12 @@ function parseWikiHTML(s) {
   //Deal with Disambig pages
   if (parsedPage.text.indexOf("may refer to:") !== -1){
     var listPattern = new RegExp(/\<li\>(.+?)\<\/li\>/g); //Find all members of lists
-    var listMembers = [];
 
     s.replace(/\<li\>(.+?)\<\/li\>/g, function(str, match){
-      match.replace(/\<\/?.+?\>/g, "");
-      listMembers.push(match);
+      match = match.replace(/\<\/?.+?\>/g, "");
+      parsedPage.text += `\n${member}`; //strip HTML & append to text
       console.log(`Found disambig member: ${match}`);
     });
-
-    for (var member in listMembers){
-      parsedPage.text += `\n${member}`; //strip HTML & append to text
-    }
   }
 
   return parsedPage;
