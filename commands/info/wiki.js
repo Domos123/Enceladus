@@ -67,7 +67,7 @@ function parseWikiHTML(s) {
                                   .replace(/\[[0-9]+?\]/g, ""); //strip citations
 
   //Deal with Disambig pages
-  if (parsedPage.text.contains("may refer to:")){
+  if (parsedPage.text.indexOf("may refer to:") !== -1){
     var listPattern = new RegExp(/\<li\>(.+?)\<\/li\>/g); //Find all members of lists
     var listMembers = textPattern.exec(s);
     for (var member in listMembers){
