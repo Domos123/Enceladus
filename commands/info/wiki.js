@@ -66,5 +66,14 @@ function parseWikiHTML(s) {
                                   .replace(/&#160;/g, " ")      //non breaking space
                                   .replace(/\[[0-9]+?\]/g, ""); //strip citations
 
+  //Deal with Disambig pages
+  if (parsedPage.text.contains("may refer to:")){
+    var listPattern = new RegExp(/\<li\>(.+?)\<\/li\>/g); //Find all members of lists
+    var listMembers = textPattern.exec(s);
+    for (var member in listMembers){
+      parsedPage.text += `\n${member.replace(/\<\/?.+?\>/g, "")}`; //strip HTML & append to text
+    }
+  }
+
   return parsedPage;
 }
