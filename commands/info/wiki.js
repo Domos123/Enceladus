@@ -71,9 +71,9 @@ function parseWikiHTML(s) {
     var listPattern = new RegExp(/\<li\>(.+?)\<\/li\>/g); //Find all members of lists
 
     s.replace(/\<li\>(.+?)\<\/li\>/g, function(str, match){
-      match = match.replace(/\<\/?.+?\>/g, "");
-      parsedPage.text += `\n${member}`; //strip HTML & append to text
-      console.log(`Found disambig member: ${match}`);
+      var cleanedMatch = match.replace(/\<\/?.+?\>/g, "");
+      parsedPage.text += `\n${cleanedMatch}`; //strip HTML & append to text
+      console.log(`Found disambig member: ${cleanedMatch}`);
     });
   }
 
