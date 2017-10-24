@@ -72,12 +72,13 @@ function parseWikiHTML(s) {
     var listMembers = [];
 
     s.replace(/\<li\>(.+?)\<\/li\>/g, function(str, match){
+      match.replace(/\<\/?.+?\>/g, "");
       listMembers.push(match);
       console.log(`Found disambig member: ${match}`);
     });
 
     for (var member in listMembers){
-      parsedPage.text += `\n${member.replace(/\<\/?.+?\>/g, "")}`; //strip HTML & append to text
+      parsedPage.text += `\n${member}`; //strip HTML & append to text
     }
   }
 
